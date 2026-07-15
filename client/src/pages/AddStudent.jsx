@@ -20,10 +20,10 @@ function AddStudent() {
       let response;
       if (id) {
         response = await axios.put(
-          `http://https://student-management-system-api-jczi.onrender.com/students/${id}`, formData);
+          `https://student-management-system-api-jczi.onrender.com/students/${id}`, formData);
       } else {
         response = await axios.post(
-          "http://https://student-management-system-api-jczi.onrender.com/students", formData);
+          "https://student-management-system-api-jczi.onrender.com/students", formData);
       }
       console.log(response.data.students);
       navigate("/Student")
@@ -36,7 +36,7 @@ function AddStudent() {
 
     async function getStudent() {
       try {
-        const response = await axios.get(`http://https://student-management-system-api-jczi.onrender.com/students/${id}`);
+        const response = await axios.get(`https://student-management-system-api-jczi.onrender.com/students/${id}`);
         response.data.students.birthdate = response.data.students.birthdate?.split("T")[0];
         response.data.students.admissionDate = response.data.students.admissionDate?.split("T")[0];
         reset(response.data.students);

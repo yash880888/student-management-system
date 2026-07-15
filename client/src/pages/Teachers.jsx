@@ -27,7 +27,7 @@ function Teachers() {
   async function getTeacher() {
     try {
       setLoading(true);
-      const response = await axios.get("http://https://student-management-system-api-jczi.onrender.com/teachers")
+      const response = await axios.get("https://student-management-system-api-jczi.onrender.com/teachers")
       setTeachers(response.data.teachers)
     } catch (error) {
       console.log(error);
@@ -44,7 +44,7 @@ function Teachers() {
 
   async function deleteTeacher(id) {
     try {
-      const response = await axios.delete(`http://https://student-management-system-api-jczi.onrender.com/teachers/${id}`)
+      const response = await axios.delete(`https://student-management-system-api-jczi.onrender.com/teachers/${id}`)
       console.log(response);
       console.log(response.data.teachers);
       await getTeacher();

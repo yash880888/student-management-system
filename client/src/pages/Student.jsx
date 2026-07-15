@@ -33,7 +33,7 @@ function Student() {
   async function getStudent() {
     try {
       setLoading(true);
-      const response = await axios.get("http://https://student-management-system-api-jczi.onrender.com/students")
+      const response = await axios.get("https://student-management-system-api-jczi.onrender.com/students")
       setStudents(response.data.students)
       setLoading(false);
     } catch (error) {
@@ -52,7 +52,7 @@ function Student() {
 
   async function deleteStudent(id) {
     try {
-      const response = await axios.delete(`http://https://student-management-system-api-jczi.onrender.com/students/${id}`)
+      const response = await axios.delete(`https://student-management-system-api-jczi.onrender.com/students/${id}`)
       console.log(response);
       await getStudent();
     } catch (error) {

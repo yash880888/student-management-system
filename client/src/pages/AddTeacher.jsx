@@ -20,10 +20,10 @@ function AddTeacher() {
       let response;
       if (id) {
         response = await axios.put(
-          `http://https://student-management-system-api-jczi.onrender.com/teachers/${id}`, formData);
+          `https://student-management-system-api-jczi.onrender.com/teachers/${id}`, formData);
       } else {
         response = await axios.post(
-          "http://https://student-management-system-api-jczi.onrender.com/teachers", formData);
+          "https://student-management-system-api-jczi.onrender.com/teachers", formData);
       }
       console.log(response.data);
       navigate("/Teachers")
@@ -36,7 +36,7 @@ function AddTeacher() {
   useEffect(() => {
     async function getTeacher() {
       try {
-        const response = await axios.get(`http://https://student-management-system-api-jczi.onrender.com/teachers/${id}`);
+        const response = await axios.get(`https://student-management-system-api-jczi.onrender.com/teachers/${id}`);
         reset(response.data.teachers);
       } catch (error) {
         console.log(error);

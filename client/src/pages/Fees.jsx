@@ -33,7 +33,7 @@ function Fees() {
   async function getFees() {
     try {
       setLoading(true);
-      const response = await axios.get("http://https://student-management-system-api-jczi.onrender.com/fees");
+      const response = await axios.get("https://student-management-system-api-jczi.onrender.com/fees");
       setFees(response.data.fees);
     } catch (error) {
       console.log(error);
@@ -52,7 +52,7 @@ function Fees() {
 
   async function deleteFee(id) {
     try {
-      await axios.delete(`http://https://student-management-system-api-jczi.onrender.com/fees/${id}`);
+      await axios.delete(`https://student-management-system-api-jczi.onrender.com/fees/${id}`);
       await getFees();
     } catch (error) {
       console.log(error);

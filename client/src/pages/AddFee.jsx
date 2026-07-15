@@ -35,9 +35,9 @@ function Add() {
       let response;
 
       if (id) {
-        response = await axios.put(`http://https://student-management-system-api-jczi.onrender.com/fees/${id}`, formData);
+        response = await axios.put(`https://student-management-system-api-jczi.onrender.com/fees/${id}`, formData);
       } else {
-        response = await axios.post("http://https://student-management-system-api-jczi.onrender.com/fees", formData);
+        response = await axios.post("https://student-management-system-api-jczi.onrender.com/fees", formData);
       }
       console.log(response.data);
       reset();
@@ -54,7 +54,7 @@ function Add() {
       try {
 
         const response = await axios.get(
-          `http://https://student-management-system-api-jczi.onrender.com/fees/${id}`
+          `https://student-management-system-api-jczi.onrender.com/fees/${id}`
         );
 
         setData({
