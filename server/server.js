@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 
-const studentRoutes = require("./models/student");
+const studentRoutes = require("./models/Student");
 const teacherRoutes = require("./models/Teacher");
-const feeRoutes = require("./models/fees");
+const feeRoutes = require("./models/Fees");
 
 const app = express();
 
