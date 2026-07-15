@@ -22,7 +22,7 @@ async function connect() {
 
 
   } catch (error) {
-    console.log("error in database connection");
+    console.log("Error in database connection", error);
 
   }
 }
