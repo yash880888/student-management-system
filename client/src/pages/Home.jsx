@@ -24,7 +24,7 @@ function Home() {
 
   async function getStudents() {
     try {
-      const response = await axios.get("http://localhost:3000/students");
+      const response = await axios.get("https://student-management-system-api-jczi.onrender.com/students");
       setStudents(response.data.students);
     } catch (error) {
       console.log(error);
@@ -33,7 +33,7 @@ function Home() {
 
   async function getTeachers() {
     try {
-      const response = await axios.get("http://localhost:3000/teachers");
+      const response = await axios.get("https://student-management-system-api-jczi.onrender.com/teachers");
       setTeachers(response.data.teachers);
     } catch (error) {
       console.log(error);
@@ -41,7 +41,7 @@ function Home() {
   }
   async function getFees() {
     try {
-      const response = await axios.get("http://localhost:3000/fees");
+      const response = await axios.get("https://student-management-system-api-jczi.onrender.com/fees");
       setFees(response.data.fees);
     } catch (error) {
       console.log(error);

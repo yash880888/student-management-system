@@ -20,10 +20,10 @@ function AddStudent() {
       let response;
       if (id) {
         response = await axios.put(
-          `http://localhost:3000/students/${id}`, formData);
+          `http://https://student-management-system-api-jczi.onrender.com/students/${id}`, formData);
       } else {
         response = await axios.post(
-          "http://localhost:3000/students", formData);
+          "http://https://student-management-system-api-jczi.onrender.com/students", formData);
       }
       console.log(response.data.students);
       navigate("/Student")
@@ -36,7 +36,7 @@ function AddStudent() {
 
     async function getStudent() {
       try {
-        const response = await axios.get(`http://localhost:3000/students/${id}`);
+        const response = await axios.get(`http://https://student-management-system-api-jczi.onrender.com/students/${id}`);
         response.data.students.birthdate = response.data.students.birthdate?.split("T")[0];
         response.data.students.admissionDate = response.data.students.admissionDate?.split("T")[0];
         reset(response.data.students);
@@ -56,7 +56,7 @@ function AddStudent() {
 
 
   return (
-      <Container fluid className="p-4 p-xl-5 bg-light min-vh-100">
+    <Container fluid className="p-4 p-xl-5 bg-light min-vh-100">
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
         <div>
           <h3 className="fw-bold text-dark mb-1 d-flex align-items-center">
@@ -71,9 +71,9 @@ function AddStudent() {
       <Card className="border-0 shadow-sm rounded-4">
         <Card.Body className="p-4 p-xl-5">
           <Form onSubmit={handleSubmit(onSubmit)}>
-            
+
             <h5 className="fw-bold mb-4 text-primary border-bottom pb-2">Personal Information</h5>
-            
+
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group className="mb-3">
@@ -123,7 +123,7 @@ function AddStudent() {
                 <Form.Group className="mb-3">
                   <Form.Label className="fw-semibold small d-block">Gender <span className="text-danger">*</span></Form.Label>
                   <div className="d-flex gap-4 mt-2">
-                    <Form.Check 
+                    <Form.Check
                       type="radio"
                       label="Male"
                       value="Male"
@@ -132,7 +132,7 @@ function AddStudent() {
                       isInvalid={!!errors.gender}
                       {...register("gender", { required: "Please select a gender" })}
                     />
-                    <Form.Check 
+                    <Form.Check
                       type="radio"
                       label="Female"
                       value="Female"
@@ -239,16 +239,16 @@ function AddStudent() {
               </Col>
             </Row>
             <div className="d-flex gap-3 justify-content-end mt-5 pt-3 border-top">
-              <Button 
-                variant="light" 
+              <Button
+                variant="light"
                 className="px-4 py-2 fw-semibold text-secondary rounded-pill border"
                 onClick={() => navigate("/Student")}
               >
                 <FaTimes className="me-2" /> Cancel
               </Button>
-              <Button 
-                variant="primary" 
-                type="submit" 
+              <Button
+                variant="primary"
+                type="submit"
                 className="px-4 py-2 fw-semibold rounded-pill shadow-sm"
               >
                 <FaSave className="me-2" /> {id ? "Update Student" : "Save Student"}
