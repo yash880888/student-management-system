@@ -87,19 +87,33 @@ router.put("/students/:id", async (req, res) => {
 
     const info = await Student.findOne({ studentID: Number(id) })
 
-    const { studentID, studentName, course, gender, phone, admissionDate } = req.body;
+    const {
+  studentID,
+  studentName,
+  fatherName,
+  gender,
+  birthdate,
+  phone,
+  email,
+  course,
+  address,
+  admissionDate,
+} = req.body;
 
     if (!info) {
       return res.status(404).json({ message: "students not found" })
     }
 
-    info.studentID = studentID;
-    info.studentName = studentName;
-    info.course = course;
-    info.gender = gender;
-    info.phone = phone;
-    info.admissionDate = admissionDate;
-
+   info.studentID = studentID;
+info.studentName = studentName;
+info.fatherName = fatherName;
+info.gender = gender;
+info.birthdate = birthdate;
+info.phone = phone;
+info.email = email;
+info.course = course;
+info.address = address;
+info.admissionDate = admissionDate;
     await info.save();
     return res.status(200).json({ message: "student updated succesfully", info: info })
   } catch (error) {
