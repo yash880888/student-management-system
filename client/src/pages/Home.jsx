@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoadingSpinner from "../components/common/LoadingSpinner";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -153,7 +153,7 @@ function Home() {
                   variant="outline-primary"
                   size="sm"
                   className="rounded-pill px-4 fw-semibold shadow-sm"
-                  onClick={() => navigate("/students")}
+                  onClick={() => navigate("/Student")}
                 >
                   View All Students
                 </Button>
