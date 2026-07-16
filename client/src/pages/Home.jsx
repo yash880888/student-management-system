@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoadingSpinner from "../components/common/LoadingSpinner";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -21,6 +21,7 @@ function Home() {
   const [teachers, setTeachers] = useState([]);
   const [fees, setFees] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   async function getStudents() {
     try {
@@ -148,8 +149,13 @@ function Home() {
             <Card className="border-0 shadow-sm rounded-4 h-100">
               <Card.Header className="bg-white border-0 pt-4 pb-3 px-4 d-flex justify-content-between align-items-center">
                 <h5 className="mb-0 fw-bold text-dark">Recent Students</h5>
-                <Button variant="outline-primary" size="sm" className="rounded-pill px-4 fw-semibold shadow-sm">
-                  View All
+                <Button
+                  variant="outline-primary"
+                  size="sm"
+                  className="rounded-pill px-4 fw-semibold shadow-sm"
+                  onClick={() => navigate("/students")}
+                >
+                  View All Students
                 </Button>
               </Card.Header>
               <Card.Body className="p-0">
